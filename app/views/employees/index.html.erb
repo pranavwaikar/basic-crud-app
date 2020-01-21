@@ -1,4 +1,4 @@
-<h1>Employees#index</h1>
+<h1>Indexing all Employees</h1>
 
 <% if @employees.blank? %>
   <h3>There are no students in the table</h3>
@@ -18,7 +18,13 @@
         <td><%= employee.last_name%></td>
         <td><%=employee.company_name%></td>
         <td><%=employee.designation%></td>
+        <td><%= link_to 'Edit' , edit_employee_path(employee) %> </td>
+        <td><%= link_to 'Show' , employee_path(employee) %> </td>
+        <td><%= link_to 'Destroy' , employee_path(employee) , method: :delete , data: {confirm: "Are you sure?"}%>
       </tr>
     <% end %>
   </table>
+  <div>
+      <%= link_to 'Create new record' , new_employee_path %> 
+  </div>
 <% end %>

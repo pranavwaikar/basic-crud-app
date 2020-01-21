@@ -1,3 +1,19 @@
+<h2> Errors are </h2>
+
+<% if @employee.errors.any?%>
+  <% @employee.errors.full_messages.each do |msg| %>
+    <ul>
+      <li> <%= msg %> </li>
+    </ul>
+  <% end %>
+<% end %>
+
+<% @employee.errors.full_messages.each do |msg| %>
+  <ul>
+    <li> <%= msg %> </li>
+  </ul>
+<% end %>
+
 <%= form_for @employee do |f| %>
 
   <div>
@@ -35,3 +51,7 @@
   </div>
 
 <% end %>
+
+<div>
+  <%= link_to "Back to Index" , employees_path %>
+</div>

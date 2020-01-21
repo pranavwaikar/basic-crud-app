@@ -1,2 +1,21 @@
-<h1>Employees#show</h1>
-<p>Find me in app/views/employees/show.html.erb</p>
+<h2> Showing record of selected employee</h2>
+
+<div>
+  <p> First Name: <%= @employee.first_name %> </p>
+</div>
+
+<div>
+  <p> Last Name: <%= @employee.last_name %> </p>
+</div>
+
+<div>
+  <p> Company Name: <%= @employee.company_name %> </p>
+</div>
+
+<div>
+  <p> Designation: <%= @employee.designation %> </p>
+</div>
+
+<%= link_to "Edit this article" ,  edit_employee_path %> | 
+<%= link_to 'Destroy' , employee_path(@employee.id) , method: :delete , data: {confirm: "Are you sure?"}%>|
+<%= link_to "Back to Index" , employees_path %>

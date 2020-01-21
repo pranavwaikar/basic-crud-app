@@ -9,9 +9,9 @@ require 'faker'
 include Faker
 
 
-5.times do
-  Employee.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
-  )
+# 5.times do
+#   Employee.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name
+#   )
 end
