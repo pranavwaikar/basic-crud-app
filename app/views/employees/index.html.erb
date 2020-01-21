@@ -1,0 +1,24 @@
+<h1>Employees#index</h1>
+
+<% if @employees.blank? %>
+  <h3>There are no students in the table</h3>
+<% else %>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Action</th>
+    </tr>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.first_name%></td>
+        <td><%= employee.last_name%></td>
+        <td><%=employee.company_name%></td>
+        <td><%=employee.designation%></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
