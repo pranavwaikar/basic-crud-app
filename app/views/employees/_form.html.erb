@@ -1,0 +1,37 @@
+<%= form_for @employee do |f| %>
+
+  <div>
+    <p>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name%>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name%>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <%= f.label :company_name %>
+      <%= f.text_field :company_name%>
+    </p>
+  </div>
+
+  <div>
+    <p>
+      <%= f.label :designation %>
+      <%= f.text_field :designation%>
+    </p>
+  </div>
+
+    <div>
+    <p>
+      <%= f.submit %>
+    </p>
+  </div>
+
+<% end %>
