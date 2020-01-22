@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200121103133) do
+ActiveRecord::Schema.define(version: 20200122080914) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "appointments", ["doctor_id"], name: "index_appointments_on_doctor_id"
+  add_index "appointments", ["patient_id"], name: "index_appointments_on_patient_id"
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "doctors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "expertise"
+    t.text     "clinic_address"
+    t.string   "phone"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "employees", force: :cascade do |t|
     t.string   "first_name"
@@ -20,6 +48,15 @@ ActiveRecord::Schema.define(version: 20200121103133) do
     t.string   "designation"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "company_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.string   "disease"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
