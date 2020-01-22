@@ -6,6 +6,8 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :company_name
       t.string :designation
 
+
+
       t.timestamps null: false
     end
   end
